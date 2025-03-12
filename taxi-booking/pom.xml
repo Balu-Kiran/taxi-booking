@@ -10,14 +10,14 @@
 
   <build>
     <plugins>
-      <!-- Maven Compiler Plugin configuration -->
+      <!-- Maven Compiler Plugin configuration for Java 8 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.8.1</version> <!-- Ensure you're using a modern version -->
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>1.8</source> <!-- Set Java source version to 1.8 -->
+          <target>1.8</target> <!-- Set Java target version to 1.8 -->
         </configuration>
       </plugin>
 
@@ -25,31 +25,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>3.3.2</version>
+        <version>3.3.2</version> <!-- You can use a stable version -->
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
-      </plugin>
-
-      <!-- Maven Enforcer Plugin to enforce Maven version -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0-M3</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <requireMavenVersion>
-                  <version>[3.5.0,)</version>
-                </requireMavenVersion>
-              </rules>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
